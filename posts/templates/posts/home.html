@@ -1,0 +1,114 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+   <header class="masthead d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1"> سامانه پرسش و پاسخ دانشجویان  </h1>
+                <h3 class="mb-5 mt-2"><em>برای ثبت سوال باید ابتدا ثبت نام کنید.ثبت نام از طریق شماره دانشجویی انجام میشود.</em></h3>
+{#                <a class="btn btn-primary btn-xl" href="{% url 'account:register' %}">ثبت نام</a>#}
+{#                <a class="btn btn-primary btn-xl" href="{% url 'account:login' %}">ورود</a>#}
+{#                <br><br>#}
+{#                <a class="btn btn-primary btn-xl" href="{% url 'posts:all_posts' %}">ورود به قسمت پرسش و پاسخ</a>#}
+            </div>
+        </header>
+        <!-- About-->
+        <section class="content-section bg-light" id="about">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <img src="{% static 'posts/assets/img/undefined.png' %}" width="250" alt="">
+
+                        <h1 class="mt-4">قوانین </h1>
+                        <p class="lead mb-5 fw-bold">
+                            هر شماره دانشجویی مختص یک کاربر است اگر هرگونه بی احترامی صورت گیرد یا هرگونه شکایت از سمت افراد دیگر ارسال شود پروفایل شما بسته میشود و مورد پیگیری قرار میگیرد.
+                            <!-- <a href="https://unsplash.com/">Unsplash</a>
+                            ! -->
+                        </p>
+                        <p class="lead mb-5 fw-bold">
+                            این سایت فقط و فقط برای راحتی دانشجویان عزیز توسعه داده شده است.و به هیچ ارگان خصوصی یا دولتی مرتبط نمیباشد.
+                            <!-- <a href="https://unsplash.com/">Unsplash</a>
+                            ! -->
+                        </p>
+                        <p class="lead mb-5 fw-bold">
+                           در زمان ثبت نام لطفا حتما رمز عبور خود را به یاد داشته باشید زیرا امکان بازیابی فقط از طریق مدیر سامانه امکان پذیر است.
+                            <!-- <a href="https://unsplash.com/">Unsplash</a>
+                            ! -->
+                        </p>
+                        <!-- <a class="btn btn-dark btn-xl" href="#services">What We Offer</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Services-->
+        <section class="content-section bg-primary text-white text-center" id="services">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading">
+                    <h3 class="text-secondary mb-0">خدمات</h3>
+                    <h2 class="mb-5">خدمات سامانه</h2>
+                </div>
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fas fa-upload"></i></span>
+                        <h4><strong>سرعت بالا</strong></h4>
+                        <p class="text-faded mb-0">سرعت بالا در پرسش و پاسخ</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fas fa-keyboard"></i></span>
+                        <h4><strong>  دسترسی راحت و آسان</strong></h4>
+                        <p class="text-faded mb-0">از هر جایی و با هر دستگاهی سوال یا پاسخ خود را ثبت کنید.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fas fa-university"></i></span>
+                        <h4><strong>امکانات ببیشتر</strong></h4>
+                        <p class="text-faded mb-0">
+                            به زودی امکانات بیشتری اضافه میشود
+
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="fas fa-address-card"></i></span>
+                        <h4><strong>حذف کاربرهای مزاحم</strong></h4>
+                        <p class="text-faded mb-0">اگر کاربر مزاحم مشاهده کردید در قسمت انتهایی صفحه به مدیر سایت اطلاع دهید تا پس از بررسی حذف گردد.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Callout-->
+        <section class="callout">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mx-auto mb-5">
+                    ورود به بخش پرسش و پاسخ.
+                </h2>
+{#                <a class="btn btn-primary btn-xl" href="{% url 'posts:all_posts' %}"> پرسش و پاسخ</a>#}
+            </div>
+        </section>
+
+
+        <!-- Call to Action-->
+        <section class="content-section bg-primary text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">راه های ارتباطی با ما</h2>
+                <h4>ممنون میشیم هرگونه نظر یا شکایت از کاربران را به ما اطلاع دهید.سپس بررسی میشود.</h4>
+                <hr>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                  <div class="mb-3">
+                    <p class="form-label">شماره دانشجویی</p>
+                    <input name="phone" required="required" class="form-control">
+<!--                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                  </div>
+                  <div class="mb-3">
+                    <p class="form-label">نظر شما</p>
+                      <textarea name="subject" required="required" type="text" class="form-control" ></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-warning">ثبت نظر</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+{% endblock %}
